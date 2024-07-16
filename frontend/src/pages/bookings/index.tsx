@@ -6,13 +6,9 @@ function Bookings() {
   const dispatch = useAppDispatch();
   const store = useAppSelector((state) => state.bookings);
   useEffect(() => {
-    dispatch(fetchBookings())
-      .unwrap()
-      .then((data) => {
-        console.log(data, "data");
-      });
+    dispatch(fetchBookings());
   }, []);
-  console.log(store, "store");
+  console.log(store.entities, store.loading, "store");
   return <h1>Bookings</h1>;
 }
 
